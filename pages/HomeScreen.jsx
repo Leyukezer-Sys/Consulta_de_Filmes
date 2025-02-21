@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text, Button, StyleSheet } from "react-native";
+import { View, Text, TouchableOpacity, StyleSheet } from "react-native";
 
 const HomeScreen = ({ navigation }) => {
   const handlePress = () => {
@@ -11,9 +11,13 @@ const HomeScreen = ({ navigation }) => {
     <View style={styles.container}>
       <Text style={styles.infoText}>Bem-vindo ao Movie Search App!</Text>
       <Text style={styles.descriptionText}>
-        Este aplicativo permite que você busque e descubra filmes com facilidade. Explore filmes de diferentes gêneros, veja informações detalhadas e muito mais.
+        Este aplicativo permite que você busque e descubra filmes com
+        facilidade. Explore filmes de diferentes gêneros, veja informações
+        detalhadas e muito mais.
       </Text>
-      <Button title="Começar a Buscar Filmes" onPress={handlePress} />
+      <TouchableOpacity style={styles.button} onPress={handlePress}>
+        <Text style={styles.buttonText}>Começar a Buscar Filmes</Text>
+      </TouchableOpacity>
     </View>
   );
 };
@@ -37,6 +41,20 @@ const styles = StyleSheet.create({
     color: "#333",
     textAlign: "center",
     marginBottom: 20,
+  },
+  button: {
+    backgroundColor: "#6200ea",
+    borderRadius: 10,
+    padding: 10,
+    marginTop: 10,
+    width: "80%",
+    justifyContent: "center",
+    alignItems: "center",
+  },
+  buttonText: {
+    color: "#fff",
+    fontSize: 18,
+    fontWeight: "bold",
   },
 });
 
