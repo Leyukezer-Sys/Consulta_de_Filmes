@@ -1,7 +1,10 @@
 //services/api
 import axios from "axios";
+import dotenv from "dotenv";
 
-const API_KEY =  "your_actual_api_key_here";
+dotenv.config();
+
+const API_KEY = process.env.REACT_APP_API_KEY
 const BASE_URL = "https://api.themoviedb.org/3";
 
 const api = axios.create({
